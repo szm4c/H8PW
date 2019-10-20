@@ -27,10 +27,10 @@ print(f"Jesteś oddalony o {odlegloscOdDomu} km od domu i masz przy sobie {ilosc
 iloscGotowki -= KWOTA_STARTOWA      #pobieram opłatę początkową
 
 if iloscGotowki <=50:
-    odlJakaMozemyPrzejechac = iloscGotowki // 2.5
+    odlJakaMozemyPrzejechac = iloscGotowki // CENA_STREFA_I
 else:
     pozostalaGotowka = iloscGotowki - 50
-    odlJakaMozemyPrzejechac = 20 + pozostalaGotowka // 5
+    odlJakaMozemyPrzejechac = 20 + pozostalaGotowka // CENA_STREFA_II
 
 print(f"Możesz przejechać {odlJakaMozemyPrzejechac} km")
 
