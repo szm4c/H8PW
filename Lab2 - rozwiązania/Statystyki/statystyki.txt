@@ -2,7 +2,7 @@
 2.| Wartoœæ maksymalna    | 941.0494559120825
 3.| Wartoœæ minimalna     | -953.9999452886912
 4.| Œrednia arytmetyczna  | -154.97530521959695
-5.| Wariancja próbkowa    | -953.9999452886912
-6.| Odcylenie standardowe | -953.9999452886912
+5.| Wariancja próbkowa    | 0.0
+6.| Odcylenie standardowe | 0.0
 7.| Œrednia 1-uciêta      | -953.9999452886912
 8.| Œrednia 3-uciêta      | -953.9999452886912

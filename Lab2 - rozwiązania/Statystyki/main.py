@@ -16,6 +16,7 @@ def stats():
     wartoscMax = -1000
     wartoscMin = 1000
     sumaLiczb = 0
+    sumaPotegiRoznicy = 0
 
     for i in file:
         dlugoscCiagu += 1
@@ -31,10 +32,11 @@ def stats():
 
     sredniaArytmetyczna = sumaLiczb / dlugoscCiagu
 
-    print(dlugoscCiagu)
-    print(wartoscMax)
-    print(wartoscMin)
-    print(sredniaArytmetyczna)
+    for i in file:   #ponownie przelatuje przez plik bo potrzebuje sredniej arytmetycznej liczonej po poprzedniej pętli
+        sumaPotegiRoznicy += (float(i) - sredniaArytmetyczna)**2  #wzory wziąłem z neta
+
+    wariancjaProbkowa = (1/(dlugoscCiagu-1))*sumaPotegiRoznicy
+    odchylenieStandardowe = (1/dlugoscCiagu)*sumaPotegiRoznicy
 
     file.close()
 
@@ -44,11 +46,11 @@ def stats():
     statystyki.write(f"2.| Wartość maksymalna    | {wartoscMax}\n")
     statystyki.write(f"3.| Wartość minimalna     | {wartoscMin}\n")
     statystyki.write(f"4.| Średnia arytmetyczna  | {sredniaArytmetyczna}\n")
-    statystyki.write(f"5.| Wariancja próbkowa    | {wartoscMin}\n")
-    statystyki.write(f"6.| Odcylenie standardowe | {wartoscMin}\n")
+    statystyki.write(f"5.| Wariancja próbkowa    | {wariancjaProbkowa}\n")
+    statystyki.write(f"6.| Odcylenie standardowe | {odchylenieStandardowe}\n")
     statystyki.write(f"7.| Średnia 1-ucięta      | {wartoscMin}\n")
     statystyki.write(f"8.| Średnia 3-ucięta      | {wartoscMin}\n")
 
     statystyki.close()
 
-stats()                                                      # JAKBY CO TO TO JEST BAAARDZO NIEDOKONCZONE
+stats()
