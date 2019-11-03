@@ -48,8 +48,8 @@ def stats():
     statystyki.write(f"4.| Średnia arytmetyczna  | {sredniaArytmetyczna}\n")
     statystyki.write(f"5.| Wariancja próbkowa    | {wariancjaProbkowa}\n")
     statystyki.write(f"6.| Odcylenie standardowe | {odchylenieStandardowe}\n")
-    statystyki.write(f"7.| Średnia 1-ucięta      | {wartoscMin}\n")
-    statystyki.write(f"8.| Średnia 3-ucięta      | {wartoscMin}\n")
+    statystyki.write(f"7.| Średnia 1-ucięta      | {wartoscMin}\n")            #niedokończone   
+    statystyki.write(f"8.| Średnia 3-ucięta      | {wartoscMin}\n")            #niedokończone
 
     statystyki.close()
 
