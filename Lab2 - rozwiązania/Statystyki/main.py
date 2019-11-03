@@ -51,4 +51,4 @@ def stats():
 
     statystyki.close()
 
-stats()
+stats()                                                      # JAKBY CO TO TO JEST BAAARDZO NIEDOKONCZONE
