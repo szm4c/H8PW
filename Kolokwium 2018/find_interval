@@ -1,0 +1,23 @@
+def find_interval(t, v):
+    n = len(t)
+    for i in range(1,n):
+        assert t[i-1] <= t[i] #sprawdzam warunki
+    x = [None] * (n+2) #powiększam listę o - i + nieskończoność
+    x[0] = -float("inf") #to nowy zerowy element listy
+    x[n+1] = float("inf") #to nowy ostatni element listy
+    for i in range(1,n+1):
+        x[i] = t[i-1] #przepisuję ze starej listy na nową przesuwając o 1
+    for i in range(n+2):
+        if x[i] < v <= x[i+1]: #sprawdzam warunki zadania, ale biorę i, i+1 zamiast i-1, i; ponieważ przesuwałem o 1 wszystkie indeksy
+            return i
+
+
+
+
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 5))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 7.4))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], -2))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 25))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 5.999999999999999999999999999))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 9.999999))
+print(find_interval([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], 2.0000000000001))
