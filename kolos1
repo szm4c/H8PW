@@ -1,0 +1,23 @@
+def replace_pattern(t, s, r):
+    n = len(t)
+    m = len(s)
+    k = len(r)
+    a = n - m + k
+    x = t.copy()
+    assert n!=0 and m!=0 and k!=0
+    for i in range(n):
+        for j in range(m):
+            if t[i+j]!=s[j]:
+                break
+            if j == m - 1:
+                x = [None] * a
+                for b in range(i):
+                    x[b] = t[b]
+                for b in range(i, i+k):
+                    x[b] = r[b-i]
+                b = 1
+                while x[a-b]==None:
+                    x[a-b] = t[n-b]
+                    b+=1
+                return x
+    return x
